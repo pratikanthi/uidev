@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
+
+input[type="text"], input[type="password"]{
+	outline: none;
+	padding: 10px;
+	display: block;
+	width: 300px;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	margin:20px auto;
+}
+
+input[type="submit"]{
+	padding: 10px;
+	background-color: #0098cb;
+	font-size: 20px;
+	border: none;
+	color: #fff;
+	border-radius: 3px;
+	outline: none;
+	width: 320px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+	background-color: #00b8eb;
+}
+
+
+.header{
+	border-bottom: 1px solid #eee;
+	padding: 10px 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.header a{
+	color: #333;
+	text-decoration: none;
+}
+
+.error_msg{
+	color: red;
+	font-size: 12px;
+	display: none;
+}
+
+
+#thankyouscreen{
+	display: none;
+}

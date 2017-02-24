@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge - 01</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<h2>Form Validation</h2>	
+	<form id="myForm" method="POST" onsubmit="return validate();">
+		<span id="error_name" class="error_msg">Please enter a name</span>
+		<input type="text" placeholder="Full Name" name="name">
+
+		<span id="error_email" class="error_msg">Please enter a valid email</span>
+		<input type="text" placeholder="Email" name="email">
+		
+		<span id="error_password" class="error_msg">Please enter a password with min 8 charaters</span>
+		<input type="password" placeholder="Password" name="password">
+		<input type="submit" name="submit" value="Validate!">
+	</form>
+	
+	<div id="thankyouscreen">
+		<h2>Thank you for your submission</h2>
+	</div>
+
+	<script type="text/javascript">
+		function validate(){
+			var name = document.forms["myForm"]["name"].value;
+			var email = document.forms["myForm"]["email"].value;
+			var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+			var password = document.forms["myForm"]["password"].value;
+			var valid = true;
+
+			var errors = document.getElementsByClassName("error_msg")
+			
+			for(var i=0;i<errors.length;i++){
+				errors[i].style.display = "none";
+			}
+
+			if(name.length == 0){
+				document.getElementById("error_name").style.display = "block";
+				valid = false;
+			}
+			if(!re.test(email) || email.length==0){
+				document.getElementById("error_email").style.display = "block";
+				valid = false;
+			}
+			if(password.length < 8){
+				document.getElementById("error_password").style.display = "block";
+				valid = false;
+			}
+			if(valid == true){
+				document.getElementById('myForm').style.display = "none";
+				document.getElementById("thankyouscreen").style.display = "block";
+				return false;
+			}else{
+				return false;			
+			}
+		}
+	</script>
+</body>
+</html>
